@@ -80,13 +80,15 @@ class _BookingScreenState extends State<BookingScreen> {
         customTableRow(title: "Service Status", desc: "${data.status}"),
         20.heightBox,
         SizedBox(
-            width: double.infinity,
-            child: FilledButton(
-                onPressed: () {
-                  acceptBooking(data.docId);
-                  context.pop();
-                },
-                child: "Confirm".text.textStyle(Typo.buttonText).make())),
+          width: double.infinity,
+          child: FilledButton(
+            onPressed: () {
+              changeBookingStatus(data.docId, "Accepted");
+              context.pop();
+            },
+            child: "Confirm".text.textStyle(Typo.buttonText).make(),
+          ),
+        ),
         20.heightBox
       ],
     );
@@ -288,8 +290,7 @@ class _BookingScreenState extends State<BookingScreen> {
                     ),
                     15.widthBox,
                     Expanded(
-                      child: formatDateTimeString(data.service!.dateTime!)
-                          .text
+                      child: data.service!.dateTime!.text
                           .size(12)
                           .color(
                             Color(0xff6C757D),
@@ -327,20 +328,27 @@ class _BookingScreenState extends State<BookingScreen> {
                 20.heightBox,
                 Row(
                   children: [
-                    Expanded(
-                      child: FilledButton(
-                        onPressed: () {
-                          showBookingSummary(data);
-                        },
-                        child: "Accept".text.textStyle(Typo.buttonText).make(),
-                      ),
-                    ),
+                    data.status == "pending"
+                        ? Expanded(
+                            child: FilledButton(
+                              onPressed: () {
+                                showBookingSummary(data);
+                              },
+                              child: "Accept"
+                                  .text
+                                  .textStyle(Typo.buttonText)
+                                  .make(),
+                            ),
+                          )
+                        : SizedBox(),
                     10.widthBox,
                     Expanded(
                       child: FilledButton(
                         style: FilledButton.styleFrom(
                             backgroundColor: Color(0xffF6F7F9)),
-                        onPressed: () {},
+                        onPressed: () {
+                          changeBookingStatus(id, "Declined");
+                        },
                         child: "Decline"
                             .text
                             .textStyle(Typo.buttonText

@@ -132,6 +132,11 @@ class BookingDetailsScreen extends StatelessWidget {
                     ],
                   ),
 
+                  SizedBox(
+                    height: 40,
+                  ),
+                  // About Handyman
+
                   20.heightBox,
                   Text(
                     "About Customer",
@@ -140,7 +145,7 @@ class BookingDetailsScreen extends StatelessWidget {
                         color: Color(0xff1C1F34),
                         fontSize: 16),
                   ),
-                  20.heightBox,
+                  10.heightBox,
                   bookingDetailsScreenCard(isCustomer: true),
                   20.heightBox,
                   Text(

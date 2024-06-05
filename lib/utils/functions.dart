@@ -28,9 +28,8 @@ String formatDateTimeString(String dateTimeString) {
   return "$formattedDate at $formattedTime";
 }
 
-acceptBooking(id) {
-  print(id);
+changeBookingStatus(id, status) {
   var db = FirebaseFirestore.instance;
   var query = db.collection(DbCollections.bookings).doc(id);
-  query.update({'status': "accepted"});
+  query.update({'status': status});
 }

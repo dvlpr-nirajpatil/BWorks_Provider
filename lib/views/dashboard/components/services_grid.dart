@@ -9,13 +9,13 @@ import 'package:text_scroll/text_scroll.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
-GridView ServicesGrid(cont, List<ServiceDataModel> data) {
+GridView ServicesGrid(cont, List<ServiceDataModel> data, size) {
   return GridView.builder(
     physics: NeverScrollableScrollPhysics(),
     shrinkWrap: true,
     itemCount: data.length,
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        mainAxisExtent: 230,
+        mainAxisExtent: size.height * 0.28,
         mainAxisSpacing: 20,
         crossAxisCount: 2,
         crossAxisSpacing: 20),
@@ -27,7 +27,7 @@ serviceGridTile(context, ServiceDataModel data) {
   Size size = MediaQuery.of(context).size;
   return GestureDetector(
     onTap: () {
-      GoRouter.of(context).goNamed(ServiceDetailsScreen.id);
+      GoRouter.of(context).goNamed(ServiceDetailScreen.id, extra: data);
     },
     child: Stack(
       children: [
@@ -41,6 +41,7 @@ serviceGridTile(context, ServiceDataModel data) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                width: double.infinity,
                 height: size.height * 0.15,
                 child: CachedNetworkImage(
                   progressIndicatorBuilder: (context, url, progress) =>
@@ -82,7 +83,7 @@ serviceGridTile(context, ServiceDataModel data) {
         ),
         Positioned(
           right: 10,
-          top: 120,
+          top: size.height * 0.13,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),

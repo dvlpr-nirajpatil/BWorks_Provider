@@ -30,98 +30,100 @@ class LoginScreen extends StatelessWidget {
             horizontal: 16,
           ),
           width: double.infinity,
-          child: Column(
-            children: [
-              100.heightBox,
-              "Hello!"
-                  .text
-                  .textStyle(
-                    TextStyle(
-                      fontFamily: Typo.medium,
-                      fontSize: 22,
-                    ),
-                  )
-                  .make(),
-              20.heightBox,
-              "Welcome Back, you have been\n missed for long Time"
-                  .text
-                  .align(TextAlign.center)
-                  .textStyle(Typo.signInScreenTitle)
-                  .make(),
-              50.heightBox,
-              CustomTextField(
-                controller: emailField,
-                label: "Email",
-              ),
-              10.heightBox,
-              CustomTextField(
-                controller: passField,
-                label: "Password",
-                isPass: true,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                        focusColor: AppColors.primary,
-                        checkColor: Colors.white,
-                        value: true,
-                        onChanged: (value) {},
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                100.heightBox,
+                "Hello!"
+                    .text
+                    .textStyle(
+                      TextStyle(
+                        fontFamily: Typo.medium,
+                        fontSize: 22,
                       ),
-                      "Remember Me".text.color(AppColors.bodyColour).make(),
-                    ],
-                  ),
-                  "Forget Password?"
-                      .text
-                      .italic
-                      .color(AppColors.primary)
-                      .fontFamily(Typo.semiBold)
-                      .make(),
-                ],
-              ),
-              20.heightBox,
-              SizedBox(
-                height: 45,
-                width: double.infinity,
-                child: FilledButton(
-                  onPressed: () {
-                    controller
-                        .userSignIn(context,
-                            email: emailField.text, password: passField.text)
-                        .then((value) {
-                      if (value != null) {
-                        dataController.fetchAppData();
-                        context.goNamed(DashboardScreen.id);
-                      }
-                    });
-                  },
-                  child: "LOGIN".text.textStyle(Typo.buttonText).make(),
+                    )
+                    .make(),
+                20.heightBox,
+                "Welcome Back, you have been\n missed for long Time"
+                    .text
+                    .align(TextAlign.center)
+                    .textStyle(Typo.signInScreenTitle)
+                    .make(),
+                50.heightBox,
+                CustomTextField(
+                  controller: emailField,
+                  label: "Email",
                 ),
-              ),
-              20.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  "Don't have an account?"
-                      .text
-                      .color(AppColors.bodyColour)
-                      .fontFamily(Typo.medium)
-                      .make(),
-                  10.widthBox,
-                  "Sign Up"
-                      .text
-                      .italic
-                      .color(AppColors.primary)
-                      .fontFamily(Typo.semiBold)
-                      .make()
-                      .onTap(() {
-                    context.goNamed(SignUpScreen.id);
-                  }),
-                ],
-              ),
-            ],
+                10.heightBox,
+                CustomTextField(
+                  controller: passField,
+                  label: "Password",
+                  isPass: true,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          focusColor: AppColors.primary,
+                          checkColor: Colors.white,
+                          value: true,
+                          onChanged: (value) {},
+                        ),
+                        "Remember Me".text.color(AppColors.bodyColour).make(),
+                      ],
+                    ),
+                    "Forget Password?"
+                        .text
+                        .italic
+                        .color(AppColors.primary)
+                        .fontFamily(Typo.semiBold)
+                        .make(),
+                  ],
+                ),
+                20.heightBox,
+                SizedBox(
+                  height: 45,
+                  width: double.infinity,
+                  child: FilledButton(
+                    onPressed: () {
+                      controller
+                          .userSignIn(context,
+                              email: emailField.text, password: passField.text)
+                          .then((value) {
+                        if (value != null) {
+                          dataController.fetchAppData();
+                          context.goNamed(DashboardScreen.id);
+                        }
+                      });
+                    },
+                    child: "LOGIN".text.textStyle(Typo.buttonText).make(),
+                  ),
+                ),
+                20.heightBox,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    "Don't have an account?"
+                        .text
+                        .color(AppColors.bodyColour)
+                        .fontFamily(Typo.medium)
+                        .make(),
+                    10.widthBox,
+                    "Sign Up"
+                        .text
+                        .italic
+                        .color(AppColors.primary)
+                        .fontFamily(Typo.semiBold)
+                        .make()
+                        .onTap(() {
+                      context.goNamed(SignUpScreen.id);
+                    }),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

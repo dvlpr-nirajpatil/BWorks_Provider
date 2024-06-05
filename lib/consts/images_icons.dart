@@ -27,4 +27,5 @@ class AssetsUrl {
   static String shieldIcon = "assets/icons/Shield Done.svg";
   static String gallaryIcon = "assets/icons/gallary.svg";
   static String serviceImage1 = "assets/images/serviceImage2.png";
+  static String verifiedIcon = "assets/icons/Verifiedverified.svg";
 }

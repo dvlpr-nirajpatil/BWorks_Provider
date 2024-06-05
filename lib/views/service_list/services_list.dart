@@ -76,7 +76,8 @@ class _ServicesListState extends State<ServicesList> {
                     ),
                   )
                 : Expanded(
-                    child: ServicesGrid(context, dataController.services))
+                    child: ServicesGrid(context, dataController.services,
+                        MediaQuery.of(context).size))
           ],
         ),
       ),

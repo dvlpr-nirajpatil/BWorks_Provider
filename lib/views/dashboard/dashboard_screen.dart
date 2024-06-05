@@ -77,7 +77,8 @@ class DashboardScreen extends StatelessWidget {
               20.heightBox,
               Consumer<FirestoreController>(
                   builder: (context, controller, xxx) {
-                return ServicesGrid(context, controller.services);
+                return ServicesGrid(
+                    context, controller.services, MediaQuery.of(context).size);
               }),
             ],
           ),

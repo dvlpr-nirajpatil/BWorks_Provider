@@ -1,4 +1,5 @@
 import 'package:billionworks/models/booking_data_model.dart';
+import 'package:billionworks/models/service_data_model.dart';
 import 'package:billionworks/views/auth/login_screen.dart';
 import 'package:billionworks/views/auth/signup_screen.dart';
 import 'package:billionworks/views/bookings/booking_details/booking_details_screen.dart';
@@ -133,8 +134,11 @@ class AppRoutes {
               ),
               GoRoute(
                 path: 'serviceDetails',
-                name: ServiceDetailsScreen.id,
-                builder: (context, state) => ServiceDetailsScreen(),
+                name: ServiceDetailScreen.id,
+                builder: (context, state) {
+                  ServiceDataModel data = state.extra as ServiceDataModel;
+                  return ServiceDetailScreen(data: data);
+                },
               )
             ],
           ),

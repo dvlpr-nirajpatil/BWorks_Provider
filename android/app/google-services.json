@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "387569748217",
+    "project_id": "bworks-1addd",
+    "storage_bucket": "bworks-1addd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387569748217:android:97766505bfecc7e051ba28",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSG7VLzDbP3vuRcpPQsfe4SaI76DDgSwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

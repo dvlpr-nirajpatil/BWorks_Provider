@@ -1,0 +1,30 @@
+class AssetsUrl {
+  static String homeIcon = "assets/icons/Home.svg";
+  static String notificationIcon = "assets/icons/Notification.svg";
+  static String bookingIcon = "assets/icons/Ticket.svg";
+  static String walletIcon = "assets/icons/Wallet.svg";
+  static String messageIcon = "assets/icons/Message.svg";
+  static String hideIcon = "assets/icons/Hide.svg";
+  static String callIcon = "assets/icons/Calling.svg";
+  static String profileIcon = "assets/icons/Profile.svg";
+  static String discountIcon = "assets/icons/Discount.svg";
+  static String documentIcon = "assets/icons/Document.svg";
+  static String searchIcon = "assets/icons/Search.svg";
+  static String usersIcon = "assets/icons/2User.svg";
+  static String serviceImage = "assets/images/carpenter.jpg";
+  static String handymanImage = "assets/images/handyman.jpeg";
+  static String listIcon = "assets/icons/Filter.svg";
+  static String gridIcon = "assets/icons/Category.svg";
+  static String calendarIcon = "assets/icons/Calendar.svg";
+  static String locationIcon = "assets/icons/Location.svg";
+  static String chatIcon = "assets/icons/Chat.svg";
+  static String profileImage = "assets/images/profilePic.jpeg";
+  static String editProfileIcon = "assets/icons/Edit.svg";
+  static String earningIcon = "assets/icons/earning.svg";
+  static String aboutIcon = "assets/icons/about.svg";
+  static String changePassIcon = "assets/icons/changePass.svg";
+  static String cameraIcon = "assets/icons/Camera.svg";
+  static String shieldIcon = "assets/icons/Shield Done.svg";
+  static String gallaryIcon = "assets/icons/gallary.svg";
+  static String serviceImage1 = "assets/images/serviceImage2.png";
+}

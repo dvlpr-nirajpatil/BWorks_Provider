@@ -1,0 +1,13 @@
+{
+    "status": "Active",
+    "img": "https: //firebasestorage.googleapis.com/v0/b/billionworks-11f9b.appspot.com/o/ServiceImages%2F1717248859026_image_picker_AF688E07-5891-49E3-AD26-E656EAF76C96-75659-000001B1D07C51ED.jpg?alt=media&token=d21d8336-ea6b-4672-a399-82971c37d83c",
+    "category": "Cleaning",
+    "time": {
+        "min": "0",
+        "hour": "1"
+    },
+    "price": "2000",
+    "provider_id": "BvrcrbExH2hW7c6qxvuv1UYEuzn2",
+    "type": "Free",
+    "name": "Car Cleaning, desc: Car wash in 1 hour"
+}
